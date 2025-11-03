@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-charity-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-charity-secondary hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Arms Global - Reaching Out, Changing Lives</title>
+    <meta name="description" content="Open Arms Global is a charitable organization dedicated to supporting vulnerable families and children worldwide through education, nutrition, and community outreach programs.">
+    <meta name="keywords" content="charity, nonprofit, global, education, nutrition, community, children, families, donation, volunteer">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://openarmsglobal.org/">
+    <meta property="og:title" content="Open Arms Global - Reaching Out, Changing Lives">
+    <meta property="og:description" content="Join us in creating lasting change in communities worldwide through education, nutrition, and community support programs.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://openarmsglobal.org/">
+    <meta property="twitter:title" content="Open Arms Global - Reaching Out, Changing Lives">
+    <meta property="twitter:description" content="Join us in creating lasting change in communities worldwide through education, nutrition, and community support programs.">
+    
+    <link rel="canonical" href="https://openarmsglobal.org/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'open-arms-orange': '#ff6b00',
+                        'open-arms-navy': '#2c3e50',
+                        'open-arms-blue': '#3498db',
+                        'open-arms-warm': '#e67e22',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.6));
+        }
+        .image-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+        }
+        .modal {
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Subtle animations appropriate for charity */
+        .gentle-hover {
+            transition: all 0.3s ease;
+        }
+        .gentle-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .scale-hover {
+            transition: transform 0.2s ease;
+        }
+        .scale-hover:hover {
+            transform: scale(1.02);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .counter-animate {
+            transition: all 0.3s ease;
+        }
+        
+        .pulse-subtle {
+            animation: pulse-subtle 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Button animations */
+        .btn-animate {
+            transition: all 0.3s ease;
+        }
+        .btn-animate:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-animate:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full z-50 transition-all duration-500" id="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center scale-hover">
+                        <span class="text-white font-bold text-xl">🤗</span>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-2xl font-bold text-open-arms-navy">Open Arms Global</h1>
+                        <p class="text-xs text-gray-600">Reaching Out, Changing Lives</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">About</a>
+                    <a href="#work" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Our Work</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Gallery</a>
+                    <a href="#impact" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Impact</a>
+                    <a href="#volunteer" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Volunteer</a>
+                    <a href="#contact" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Contact</a>
+                </div>
+                <button class="hidden md:block bg-open-arms-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full btn-animate" onclick="openDonationModal()">
+                    Donate Now
+                </button>
+                <!-- Mobile menu button -->
+                <button class="lg:hidden scale-hover" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0">
+            <img src="public/images/WhatsApp Image 2025-04-06 at 10.22.18 PM.jpeg" alt="Community work" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight fade-in">
+                Every Child Deserves
+                <span class="text-open-arms-orange block">Open Arms</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed fade-in" style="animation-delay: 0.3s;">
+                We're a passionate organization reaching out to vulnerable communities worldwide, 
+                one life at a time. Join us in creating lasting change.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="animation-delay: 0.6s;">
+                <button class="bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full btn-animate text-lg" onclick="openDonationModal()">
+                    Start Helping Today
+                </button>
+                <button class="border-2 border-white bg-transparent hover:bg-white hover:text-open-arms-navy font-bold py-4 px-8 rounded-full btn-animate text-lg" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                    Learn Our Story
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white pulse-subtle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative gentle-hover">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.23.21 PM.jpeg" alt="Children" class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-open-arms-orange text-white p-6 rounded-2xl shadow-lg scale-hover">
+                        <div class="text-3xl font-bold">2024</div>
+                        <div class="text-sm">Year Founded</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-8 leading-tight">
+                        Small Steps,
+                        <span class="text-open-arms-orange">Big Hearts</span>
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Open Arms Global started as a simple idea: what if we could make a real difference 
+                        in vulnerable communities worldwide? We're not a massive organization with thousands of 
+                        employees - we're passionate individuals who believe that every child deserves love, care, and opportunity.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Though we're growing, our focus remains personal. We create direct, meaningful impact 
+                        by building genuine relationships with the families and communities we serve.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md gentle-hover">
+                            <div class="text-3xl mb-2">🌍</div>
+                            <div class="text-2xl font-bold text-open-arms-navy">Global</div>
+                            <div class="text-gray-600">Worldwide Reach</div>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md gentle-hover">
+                            <div class="text-3xl mb-2">🤝</div>
+                            <div class="text-2xl font-bold text-open-arms-navy">Personal</div>
+                            <div class="text-gray-600">Direct Impact</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section id="work" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">What We Do</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Every program we run comes from listening to community needs worldwide. 
+                    We start with purpose and grow with impact.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <div class="relative">
+                        <img src="public/images/WhatsApp Image 2025-04-28 at 1.50.47 PM.jpeg" alt="Food support" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="image-overlay absolute inset-0"></div>
+                        <div class="absolute top-4 left-4 bg-open-arms-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Active
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Nutrition Support</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Providing nutritious meals and food packages to families in need worldwide. 
+                            No child should go to bed hungry.
+                        </p>
+                        <div class="text-sm text-open-arms-orange font-semibold">50+ families currently supported</div>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <div class="relative">
+                        <img src="public/images/WhatsApp Image 2025-05-04 at 4.17.42 PM.jpeg" alt="Education" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="image-overlay absolute inset-0"></div>
+                        <div class="absolute top-4 left-4 bg-open-arms-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Growing
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Educational Support</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            School supplies, tutoring, and mentorship programs to help children 
+                            succeed in their education globally.
+                        </p>
+                        <div class="text-sm text-open-arms-orange font-semibold">120+ children in our programs</div>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <div class="relative">
+                        <img src="public/images/WhatsApp Image 2025-04-06 at 10.31.13 PM.jpeg" alt="Community support" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="image-overlay absolute inset-0"></div>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Expanding
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Community Outreach</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Building connections and providing support to isolated families 
+                            and elderly community members worldwide.
+                        </p>
+                        <div class="text-sm text-open-arms-orange font-semibold">15+ communities served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">Our Story in Pictures</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    See the faces behind our mission and the global impact we're making together.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-06 at 10.21.06 PM.jpeg', 'Community gathering')">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.21.06 PM.jpeg" alt="Community gathering" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-06 at 10.22.41 PM.jpeg', 'Food distribution')">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.22.41 PM.jpeg" alt="Food distribution" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-06 at 10.29.32 PM.jpeg', 'Children activities')">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.29.32 PM.jpeg" alt="Children activities" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-13 at 11.06.16 PM.jpeg', 'Community event')">
+                    <img src="public/images/WhatsApp Image 2025-04-13 at 11.06.16 PM.jpeg" alt="Community event" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-27 at 1.47.47 AM.jpeg', 'Volunteer work')">
+                    <img src="public/images/WhatsApp Image 2025-04-27 at 1.47.47 AM.jpeg" alt="Volunteer work" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-04-28 at 2.30.32 PM.jpeg', 'Family support')">
+                    <img src="public/images/WhatsApp Image 2025-04-28 at 2.30.32 PM.jpeg" alt="Family support" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-05-04 at 4.17.42 PM (1).jpeg', 'Educational program')">
+                    <img src="public/images/WhatsApp Image 2025-05-04 at 4.17.42 PM (1).jpeg" alt="Educational program" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer scale-hover" onclick="openGalleryModal('public/images/WhatsApp Image 2025-05-06 at 5.25.44 PM.jpeg', 'Community celebration')">
+                    <img src="public/images/WhatsApp Image 2025-05-06 at 5.25.44 PM.jpeg" alt="Community celebration" class="w-full h-48 object-cover rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-20 bg-open-arms-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Growing Global Impact</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    Every number represents a real person whose life we've touched across the globe.
+                </p>
+            </div>
+
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center counter-animate">
+                    <div class="text-4xl lg:text-5xl font-bold text-open-arms-orange mb-2 counter" data-count="185">0</div>
+                    <div class="text-gray-300">Families Helped</div>
+                </div>
+                <div class="text-center counter-animate">
+                    <div class="text-4xl lg:text-5xl font-bold text-open-arms-orange mb-2 counter" data-count="420">0</div>
+                    <div class="text-gray-300">Children Reached</div>
+                </div>
+                <div class="text-center counter-animate">
+                    <div class="text-4xl lg:text-5xl font-bold text-open-arms-orange mb-2 counter" data-count="45">0</div>
+                    <div class="text-gray-300">Volunteers</div>
+                </div>
+                <div class="text-center counter-animate">
+                    <div class="text-4xl lg:text-5xl font-bold text-open-arms-orange mb-2 counter" data-count="8">0</div>
+                    <div class="text-gray-300">Countries</div>
+                </div>
+            </div>
+
+            <!-- Story -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative scale-hover">
+                    <img src="public/images/WhatsApp Image 2025-05-04 at 4.24.00 PM.jpeg" alt="Success story" class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
+                </div>
+                
+                <div>
+                    <div class="text-6xl text-open-arms-orange mb-4">"</div>
+                    <p class="text-xl leading-relaxed mb-6 opacity-90">
+                        When Open Arms Global started helping our family, we were struggling to put food on the table. 
+                        Now my daughter has school supplies and I don't worry about her next meal. 
+                        They didn't just give us help - they gave us hope for the future.
+                    </p>
+                    <div class="border-l-4 border-open-arms-orange pl-4">
+                        <div class="font-semibold">Maria, single mother of two</div>
+                        <div class="text-sm opacity-75">Program participant since 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="text-center mt-16">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto gentle-hover">
+                    <h3 class="text-3xl font-bold mb-4">Stay Connected Globally</h3>
+                    <p class="text-xl mb-6 opacity-90">
+                        Get updates on our programs worldwide and see how your support is making a global difference.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="handleNewsletterSignup(event)">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-open-arms-orange transition-all" required>
+                        <button type="submit" class="bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full btn-animate">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">Join Our Global Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    We're always looking for passionate people to help us reach more families worldwide. 
+                    Every skill, every hour, every heart makes a global difference.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Volunteer Opportunities -->
+                <div>
+                    <h3 class="text-2xl font-bold text-open-arms-navy mb-6">How You Can Help Globally</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md gentle-hover">
+                            <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-xl">🍎</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-open-arms-navy">Global Food Distribution</h4>
+                                <p class="text-gray-600">Help coordinate and support food packages to families across multiple countries.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md gentle-hover">
+                            <div class="w-12 h-12 bg-open-arms-blue rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-xl">👨‍🏫</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-open-arms-navy">Online Tutoring</h4>
+                                <p class="text-gray-600">Support children worldwide with virtual homework help and reading programs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md gentle-hover">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-xl">💻</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-open-arms-navy">Digital Support</h4>
+                                <p class="text-gray-600">Help with website, social media, and coordinating our global operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Signup Form -->
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg gentle-hover">
+                        <h3 class="text-2xl font-bold text-open-arms-navy mb-6">Global Volunteer Signup</h3>
+                        <form class="space-y-6" onsubmit="handleVolunteerSignup(event)">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your first name" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your last name" required>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="your.email@example.com" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                                <input type="text" name="country" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your country" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">How would you like to help globally?</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="interests" value="food-distribution" class="text-open-arms-orange focus:ring-open-arms-orange">
+                                        <span class="ml-2">Global Food Distribution</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="interests" value="tutoring" class="text-open-arms-orange focus:ring-open-arms-orange">
+                                        <span class="ml-2">Online Tutoring</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="interests" value="digital" class="text-open-arms-orange focus:ring-open-arms-orange">
+                                        <span class="ml-2">Digital Support</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="interests" value="fundraising" class="text-open-arms-orange focus:ring-open-arms-orange">
+                                        <span class="ml-2">Fundraising</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Tell us about yourself</label>
+                                <textarea name="about" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your experience, skills, and why you want to help..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg btn-animate">
+                                Join Our Global Team
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">Make a Global Impact</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Every contribution matters, whether it's time, money, or simply spreading the word about our global mission.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Donate -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center gentle-hover">
+                    <div class="w-16 h-16 bg-open-arms-orange rounded-full flex items-center justify-center mx-auto mb-6 pulse-subtle">
+                        <span class="text-2xl">💝</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-open-arms-navy mb-4">Make a Donation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Every dollar goes directly to families in need worldwide. $25 can feed a family for a week.
+                    </p>
+                    <button class="bg-open-arms-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full btn-animate w-full" onclick="openDonationModal()">
+                        Donate Now
+                    </button>
+                </div>
+
+                <!-- Sponsor -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center gentle-hover">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-open-arms-navy mb-4">Sponsor a Family</h3>
+                    <p class="text-gray-600 mb-6">
+                        Make an ongoing commitment to support a specific family's journey to self-sufficiency.
+                    </p>
+                    <button class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-full btn-animate w-full" onclick="openSponsorshipModal()">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Spread the Word -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center gentle-hover">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">📢</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-open-arms-navy mb-4">Share Our Story</h3>
+                    <p class="text-gray-600 mb-6">
+                        Follow us on social media and help us reach more people globally who want to make a difference.
+                    </p>
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full btn-animate w-full" onclick="shareOnSocial()">
+                        Share Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-lg gentle-hover">
+                <h3 class="text-2xl font-bold text-open-arms-navy mb-6 text-center">Get In Touch</h3>
+                <form class="space-y-6" onsubmit="handleContactForm(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your first name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Your last name" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">How would you like to help?</label>
+                        <select name="interest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" required>
+                            <option value="">Choose an option</option>
+                            <option value="donate">Make a donation</option>
+                            <option value="volunteer">Volunteer my time</option>
+                            <option value="sponsor">Sponsor a family</option>
+                            <option value="partner">Partner with us</option>
+                            <option value="media">Media inquiry</option>
+                            <option value="other">Something else</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent transition-all" placeholder="Tell us more about how you'd like to help..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg btn-animate">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-open-arms-navy text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Organization Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center scale-hover">
+                            <span class="text-white font-bold text-xl">🤗</span>
+                        </div>
+                        <div class="ml-3">
+                            <h1 class="text-2xl font-bold">Open Arms Global</h1>
+                            <p class="text-sm text-gray-300">Reaching Out, Changing Lives</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        A passionate organization dedicated to supporting vulnerable families 
+                        and children in communities worldwide.
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        <strong>Website:</strong> <a href="https://openarmsglobal.org" class="text-open-arms-orange hover:text-orange-300 transition-colors">OpenArmsGlobal.org</a>
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-open-arms-orange transition-colors">About Us</a></li>
+                        <li><a href="#work" class="text-gray-300 hover:text-open-arms-orange transition-colors">Our Work</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-open-arms-orange transition-colors">Photo Gallery</a></li>
+                        <li><a href="#impact" class="text-gray-300 hover:text-open-arms-orange transition-colors">Global Impact</a></li>
+                        <li><a href="#volunteer" class="text-gray-300 hover:text-open-arms-orange transition-colors">Volunteer</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-open-arms-orange transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="space-y-3">
+                        <p class="text-gray-300">📧 hello@openarmsglobal.org</p>
+                        <p class="text-gray-300">🌍 Serving communities worldwide</p>
+                        <div class="flex space-x-4 mt-4">
+                            <button class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors scale-hover">
+                                <span class="text-xs">f</span>
+                            </button>
+                            <button class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors scale-hover">
+                                <span class="text-xs">t</span>
+                            </button>
+                            <button class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors scale-hover">
+                                <span class="text-xs">i</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2024 Open Arms Global. Made with ❤️ for communities worldwide.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="fixed inset-0 bg-black bg-opacity-50 modal hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 transform transition-all scale-hover">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-open-arms-navy mb-2">Make a Global Donation</h3>
+                <p class="text-gray-600">Choose how you'd like to help communities worldwide</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button class="donation-amount bg-gray-100 hover:bg-open-arms-orange hover:text-white p-4 rounded-lg font-bold btn-animate" data-amount="25">$25</button>
+                <button class="donation-amount bg-gray-100 hover:bg-open-arms-orange hover:text-white p-4 rounded-lg font-bold btn-animate" data-amount="50">$50</button>
+                <button class="donation-amount bg-gray-100 hover:bg-open-arms-orange hover:text-white p-4 rounded-lg font-bold btn-animate" data-amount="100">$100</button>
+                <button class="donation-amount bg-gray-100 hover:bg-open-arms-orange hover:text-white p-4 rounded-lg font-bold btn-animate" data-amount="custom">Custom</button>
+            </div>
+            
+            <div id="customAmountDiv" class="hidden mb-6">
+                <input type="number" id="customAmount" placeholder="Enter amount" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-open-arms-orange focus:border-transparent">
+            </div>
+            
+            <div class="space-y-4">
+                <button class="w-full bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg btn-animate" onclick="processDonation('one-time')">
+                    Donate Once
+                </button>
+                <button class="w-full bg-open-arms-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg btn-animate" onclick="processDonation('monthly')">
+                    Monthly Donation
+                </button>
+                <button class="w-full border border-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 btn-animate" onclick="closeDonationModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-75 modal hidden z-50 flex items-center justify-center p-4">
+        <div class="max-w-4xl w-full relative">
+            <img id="galleryModalImage" src="" alt="" class="w-full h-auto rounded-lg">
+            <div class="absolute top-4 right-4">
+                <button onclick="closeGalleryModal()" class="bg-white text-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 btn-animate">
+                    ×
+                </button>
+            </div>
+            <div id="galleryModalCaption" class="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg"></div>
+        </div>
+    </div>
+
+    <script>
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 60;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counter animation when impact section is visible
+        const impactSection = document.getElementById('impact');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        observer.observe(impactSection);
+
+        // Donation Modal Functions
+        let selectedAmount = 0;
+
+        function openDonationModal() {
+            document.getElementById('donationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDonationModal() {
+            document.getElementById('donationModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            selectedAmount = 0;
+            document.getElementById('customAmountDiv').classList.add('hidden');
+            // Reset amount buttons
+            document.querySelectorAll('.donation-amount').forEach(btn => {
+                btn.classList.remove('bg-open-arms-orange', 'text-white');
+                btn.classList.add('bg-gray-100');
+            });
+        }
+
+        // Handle amount selection
+        document.querySelectorAll('.donation-amount').forEach(button => {
+            button.addEventListener('click', function() {
+                // Reset all buttons
+                document.querySelectorAll('.donation-amount').forEach(btn => {
+                    btn.classList.remove('bg-open-arms-orange', 'text-white');
+                    btn.classList.add('bg-gray-100');
+                });
+                
+                // Highlight selected button
+                this.classList.remove('bg-gray-100');
+                this.classList.add('bg-open-arms-orange', 'text-white');
+                
+                const amount = this.getAttribute('data-amount');
+                if (amount === 'custom') {
+                    document.getElementById('customAmountDiv').classList.remove('hidden');
+                    selectedAmount = 0;
+                } else {
+                    document.getElementById('customAmountDiv').classList.add('hidden');
+                    selectedAmount = parseInt(amount);
+                }
+            });
+        });
+
+        function processDonation(type) {
+            const amount = selectedAmount || document.getElementById('customAmount')?.value;
+            if (!amount || amount <= 0) {
+                alert('Please select or enter a donation amount.');
+                return;
+            }
+            
+            alert(`Thank you! You've chosen to donate $${amount} ${type === 'monthly' ? 'monthly' : 'as a one-time donation'} to help families worldwide. 
+                   
+In a real implementation, this would redirect to a secure payment processor like Stripe or PayPal.`);
+            closeDonationModal();
+        }
+
+        // Gallery Modal Functions
+        function openGalleryModal(imageSrc, caption) {
+            document.getElementById('galleryModalImage').src = imageSrc;
+            document.getElementById('galleryModalCaption').textContent = caption;
+            document.getElementById('galleryModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Form Handlers
+        function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            alert(`Thank you for subscribing to Open Arms Global updates! We'll send global program updates to ${email}.`);
+            event.target.reset();
+        }
+
+        function handleVolunteerSignup(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
+            const country = formData.get('country');
+            alert(`Thank you for your interest, ${name} from ${country}! We'll contact you soon about global volunteer opportunities.`);
+            event.target.reset();
+        }
+
+        function handleContactForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
+            alert(`Thank you for reaching out, ${name}! We'll get back to you within 24 hours about helping communities globally.`);
+            event.target.reset();
+        }
+
+        // Social Sharing
+        function shareOnSocial() {
+            const url = 'https://openarmsglobal.org';
+            const text = "Check out Open Arms Global - a charity making a real difference in communities worldwide!";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Open Arms Global',
+                    text: text,
+                    url: url
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+                window.open(shareUrl, '_blank');
+            }
+        }
+
+        // Sponsorship Modal (placeholder)
+        function openSponsorshipModal() {
+            alert('Family sponsorship program launching soon! For now, please contact us directly at hello@openarmsglobal.org to learn about ongoing support opportunities.');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                closeDonationModal();
+                closeGalleryModal();
+            }
+        });
+
+        // Keyboard navigation for modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDonationModal();
+                closeGalleryModal();
+            }
+        });
+    </script>
+</body>
+</html>
