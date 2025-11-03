@@ -89,6 +89,36 @@
             scroll-behavior: smooth;
         }
         
+        /* Progress bars for impact metrics */
+        .progress-bar {
+            background: linear-gradient(90deg, #ff6b00, #e67e22);
+            animation: progressGrow 2s ease-out forwards;
+        }
+        
+        @keyframes progressGrow {
+            from { width: 0%; }
+        }
+        
+        /* Improved card shadows */
+        .impact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,107,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        /* Testimonial cards */
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-left: 4px solid #ff6b00;
+        }
+
         /* Button animations */
         .btn-animate {
             transition: all 0.3s ease;
@@ -121,7 +151,6 @@
                     <a href="#about" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">About</a>
                     <a href="#work" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Our Work</a>
                     <a href="#gallery" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Gallery</a>
-                    <a href="#impact" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Impact</a>
                     <a href="#volunteer" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Volunteer</a>
                     <a href="#contact" class="text-gray-700 hover:text-open-arms-orange transition-colors duration-300">Contact</a>
                 </div>
@@ -209,6 +238,114 @@
                             <div class="text-3xl mb-2">🤝</div>
                             <div class="text-2xl font-bold text-open-arms-navy">Personal</div>
                             <div class="text-gray-600">Direct Impact</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics Section -->
+    <section class="py-20 bg-open-arms-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our Growing Impact</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Though we're a growing organization, we're already making meaningful changes in communities worldwide
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="impact-card">
+                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="families-counter">185</div>
+                    <div class="text-gray-600 mb-4">Families Supported</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="children-counter">420</div>
+                    <div class="text-gray-600 mb-4">Children Reached</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="progress-bar h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="countries-counter">8</div>
+                    <div class="text-gray-600 mb-4">Countries Active</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="progress-bar h-2 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="volunteers-counter">45</div>
+                    <div class="text-gray-600 mb-4">Global Volunteers</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="progress-bar h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">Stories of Hope</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Hear from the communities and volunteers who make our work possible
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg gentle-hover">
+                    <div class="text-open-arms-orange text-4xl mb-4">&quot;</div>
+                    <p class="text-gray-700 mb-6 italic">
+                        &quot;Open Arms Global helped our community build a small library. Now our children have books to read and a safe place to learn. We are so grateful.&quot;
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <div class="font-semibold text-open-arms-navy">Maria Santos</div>
+                            <div class="text-gray-600 text-sm">Community Leader, Philippines</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg gentle-hover">
+                    <div class="text-open-arms-orange text-4xl mb-4">&quot;</div>
+                    <p class="text-gray-700 mb-6 italic">
+                        &quot;Volunteering with Open Arms Global has been life-changing. Seeing the direct impact of our small efforts makes everything worthwhile.&quot;
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            J
+                        </div>
+                        <div>
+                            <div class="font-semibold text-open-arms-navy">James Wilson</div>
+                            <div class="text-gray-600 text-sm">Volunteer, United Kingdom</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg gentle-hover">
+                    <div class="text-open-arms-orange text-4xl mb-4">&quot;</div>
+                    <p class="text-gray-700 mb-6 italic">
+                        &quot;The food packages and educational support changed everything for my family. My children can now focus on their studies without worrying about meals.&quot;
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-open-arms-orange rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <div class="font-semibold text-open-arms-navy">Amara Okafor</div>
+                            <div class="text-gray-600 text-sm">Parent, Nigeria</div>
                         </div>
                     </div>
                 </div>
@@ -392,6 +529,74 @@
                         </button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-open-arms-navy mb-6">Latest Updates</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Stay informed about our recent activities and upcoming initiatives
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.21.06 PM.jpeg" alt="New Food Program" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-open-arms-orange font-semibold mb-2">PROGRAM LAUNCH</div>
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Expanding Food Security Program</h3>
+                        <p class="text-gray-600 mb-4">
+                            We're excited to announce the expansion of our food security initiative to three new communities, 
+                            providing regular nutritious meals to over 150 additional families.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">November 1, 2025</span>
+                            <button class="text-open-arms-orange hover:text-orange-600 font-semibold btn-animate">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <img src="public/images/WhatsApp Image 2025-04-06 at 10.22.41 PM.jpeg" alt="Volunteer Training" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-open-arms-orange font-semibold mb-2">VOLUNTEER UPDATE</div>
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Global Volunteer Training Program</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our new online training platform launched this month, helping volunteers worldwide better 
+                            understand community needs and effective support strategies.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">October 28, 2025</span>
+                            <button class="text-open-arms-orange hover:text-orange-600 font-semibold btn-animate">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden gentle-hover">
+                    <img src="public/images/WhatsApp Image 2025-04-28 at 1.50.47 PM.jpeg" alt="Education Initiative" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-open-arms-orange font-semibold mb-2">EDUCATION</div>
+                        <h3 class="text-xl font-bold text-open-arms-navy mb-3">Mobile Learning Centers Success</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our mobile learning centers have reached rural areas where traditional schools aren't accessible, 
+                            bringing education directly to 200+ children in remote communities.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">October 25, 2025</span>
+                            <button class="text-open-arms-orange hover:text-orange-600 font-semibold btn-animate">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full btn-animate">
+                    View All Updates
+                </button>
             </div>
         </div>
     </section>
@@ -908,6 +1113,57 @@ In a real implementation, this would redirect to a secure payment processor like
                 closeGalleryModal();
             }
         });
+
+        // Counter animation function
+        function animateCounter(elementId, targetValue, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const increment = targetValue / (duration / 16);
+            let currentValue = startValue;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    currentValue = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentValue);
+            }, 16);
+        }
+
+        // Intersection Observer for counter animation
+        function initCounterAnimation() {
+            const counters = document.querySelectorAll('[id$="-counter"]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const elementId = entry.target.id;
+                        switch(elementId) {
+                            case 'families-counter':
+                                animateCounter(elementId, 185);
+                                break;
+                            case 'children-counter':
+                                animateCounter(elementId, 420);
+                                break;
+                            case 'countries-counter':
+                                animateCounter(elementId, 8);
+                                break;
+                            case 'volunteers-counter':
+                                animateCounter(elementId, 45);
+                                break;
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // Initialize counter animation when page loads
+        document.addEventListener('DOMContentLoaded', initCounterAnimation);
     </script>
 </body>
 </html>
