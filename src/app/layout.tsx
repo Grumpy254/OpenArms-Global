@@ -1,23 +1,13 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({ subsets: ['latin'] })
+
 export const metadata: Metadata = {
-  title: 'Open Arms Global - Reaching Out, Changing Lives',
-  description: 'Supporting vulnerable families and children in communities worldwide through education, nutrition, and community outreach programs.',
-  keywords: 'charity, nonprofit, global, education, nutrition, community, children, families, donation, volunteer, humanitarian',
-  authors: [{ name: 'Open Arms Global' }],
-  openGraph: {
-    title: 'Open Arms Global - Reaching Out, Changing Lives',
-    description: 'Supporting vulnerable families and children in communities worldwide',
-    url: 'https://openarmsglobal.org',
-    siteName: 'Open Arms Global',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Open Arms Global - Reaching Out, Changing Lives',
-    description: 'Supporting vulnerable families and children in communities worldwide',
-  },
+  title: 'Hope Foundation - Making a Difference Together',
+  description: 'Join us in creating positive change in communities worldwide through education, healthcare, and sustainable development programs.',
+  keywords: 'charity, nonprofit, donation, community, education, healthcare, sustainable development',
 }
 
 export default function RootLayout({
@@ -27,12 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-sans">
+      <body className={inter.className}>
         {children}
       </body>
     </html>

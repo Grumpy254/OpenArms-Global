@@ -2,11 +2,12 @@
   "name": "open-arms-global",
   "version": "1.0.0",
   "description": "Open Arms Global charity website - Reaching Out, Changing Lives",
+  "main": "index.html",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Ready for deployment to any static hosting service'"
   },
   "repository": {
     "type": "git",
@@ -35,20 +36,6 @@
     "url": "https://github.com/Grumpy254/OpenArms-Global/issues"
   },
   "homepage": "https://openarmsglobal.org",
-  "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.0.0",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.3.0"
-  }
+  "devDependencies": {},
+  "dependencies": {}
 }
