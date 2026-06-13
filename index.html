@@ -12,14 +12,34 @@
     <meta property="og:url" content="https://openarmsglobal.org/">
     <meta property="og:title" content="Open Arms Global - Reaching Out, Changing Lives">
     <meta property="og:description" content="Join us in creating lasting change in communities worldwide through education, nutrition, and community support programs.">
-    
+    <meta property="og:image" content="https://openarmsglobal.org/public/images/WhatsApp%20Image%202025-04-06%20at%2010.22.18%20PM.jpeg">
+    <meta property="og:site_name" content="Open Arms Global">
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://openarmsglobal.org/">
     <meta property="twitter:title" content="Open Arms Global - Reaching Out, Changing Lives">
     <meta property="twitter:description" content="Join us in creating lasting change in communities worldwide through education, nutrition, and community support programs.">
-    
+    <meta property="twitter:image" content="https://openarmsglobal.org/public/images/WhatsApp%20Image%202025-04-06%20at%2010.22.18%20PM.jpeg">
+
+    <meta name="theme-color" content="#ff6b00">
     <link rel="canonical" href="https://openarmsglobal.org/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%97%3C/text%3E%3C/svg%3E">
+
+    <!-- Structured data: NGO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Open Arms Global",
+      "alternateName": "OpenArmsGlobal",
+      "url": "https://openarmsglobal.org/",
+      "logo": "https://openarmsglobal.org/public/images/WhatsApp%20Image%202025-04-06%20at%2010.22.18%20PM.jpeg",
+      "description": "Open Arms Global is a charitable organization supporting vulnerable families and children in communities worldwide through education, nutrition, and community outreach programs.",
+      "email": "hello@openarmsglobal.org",
+      "slogan": "Reaching Out, Changing Lives"
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -87,6 +107,7 @@
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         /* Progress bars for impact metrics */
@@ -132,7 +153,7 @@
         }
     </style>
 </head>
-<body class="font-sans">
+<body class="font-sans overflow-x-hidden">
     <!-- Header -->
     <header class="bg-white shadow-sm fixed w-full z-50 transition-all duration-500" id="header">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,7 +163,7 @@
                         <span class="text-white font-bold text-xl">🤗</span>
                     </div>
                     <div class="ml-3">
-                        <h1 class="text-2xl font-bold text-open-arms-navy">Open Arms Global</h1>
+                        <span class="block text-2xl font-bold text-open-arms-navy">Open Arms Global</span>
                         <p class="text-xs text-gray-600">Reaching Out, Changing Lives</p>
                     </div>
                 </div>
@@ -158,11 +179,26 @@
                     Donate Now
                 </button>
                 <!-- Mobile menu button -->
-                <button class="lg:hidden scale-hover" id="mobile-menu-btn">
+                <button class="lg:hidden scale-hover text-open-arms-navy" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 pb-4">
+                <div class="flex flex-col space-y-1 pt-2">
+                    <a href="#home" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                    <a href="#about" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">About</a>
+                    <a href="#work" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">Our Work</a>
+                    <a href="#gallery" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">Gallery</a>
+                    <a href="#volunteer" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">Volunteer</a>
+                    <a href="#contact" class="px-2 py-3 text-gray-700 hover:text-open-arms-orange hover:bg-gray-50 rounded-lg transition-colors">Contact</a>
+                    <button class="mt-2 bg-open-arms-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full btn-animate" onclick="openDonationModal()">
+                        Donate Now
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -175,7 +211,7 @@
         </div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight fade-in">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight fade-in">
                 Every Child Deserves
                 <span class="text-open-arms-orange block">Open Arms</span>
             </h1>
@@ -245,51 +281,6 @@
         </div>
     </section>
 
-    <!-- Impact Statistics Section -->
-    <section class="py-20 bg-open-arms-navy text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-6">Our Growing Impact</h2>
-                <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                    Though we're a growing organization, we're already making meaningful changes in communities across Africa
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="impact-card">
-                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="families-counter">185</div>
-                    <div class="text-gray-600 mb-4">Families Supported</div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
-                    </div>
-                </div>
-                
-                <div class="impact-card">
-                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="children-counter">420</div>
-                    <div class="text-gray-600 mb-4">Children Reached</div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="progress-bar h-2 rounded-full" style="width: 75%"></div>
-                    </div>
-                </div>
-                
-                <div class="impact-card">
-                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="countries-counter">8</div>
-                    <div class="text-gray-600 mb-4">Countries Active</div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="progress-bar h-2 rounded-full" style="width: 60%"></div>
-                    </div>
-                </div>
-                
-                <div class="impact-card">
-                    <div class="text-4xl font-bold text-open-arms-orange mb-2" id="programs-counter">3</div>
-                    <div class="text-gray-600 mb-4">Active Programs</div>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="progress-bar h-2 rounded-full" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Testimonials Section -->
     <section class="py-20 bg-gray-50">
@@ -523,7 +514,7 @@
                         Get updates on our programs worldwide and see how your support is making a global difference.
                     </p>
                     <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" onsubmit="handleNewsletterSignup(event)">
-                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-open-arms-orange transition-all" required>
+                        <input type="email" name="email" aria-label="Email address" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-open-arms-orange transition-all" required>
                         <button type="submit" class="bg-open-arms-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full btn-animate">
                             Subscribe
                         </button>
@@ -827,7 +818,7 @@
                             <span class="text-white font-bold text-xl">🤗</span>
                         </div>
                         <div class="ml-3">
-                            <h1 class="text-2xl font-bold">Open Arms Global</h1>
+                            <p class="text-2xl font-bold">Open Arms Global</p>
                             <p class="text-sm text-gray-300">Reaching Out, Changing Lives</p>
                         </div>
                     </div>
@@ -860,14 +851,14 @@
                         <p class="text-gray-300">📧 hello@openarmsglobal.org</p>
                         <p class="text-gray-300">🌍 Serving communities worldwide</p>
                         <div class="flex space-x-4 mt-4">
-                            <button class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors scale-hover">
-                                <span class="text-xs">f</span>
+                            <button type="button" aria-label="Share on Facebook" onclick="shareOnSocial()" class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors scale-hover">
+                                <span class="text-xs" aria-hidden="true">f</span>
                             </button>
-                            <button class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors scale-hover">
-                                <span class="text-xs">t</span>
+                            <button type="button" aria-label="Share on X / Twitter" onclick="shareOnSocial()" class="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors scale-hover">
+                                <span class="text-xs" aria-hidden="true">t</span>
                             </button>
-                            <button class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors scale-hover">
-                                <span class="text-xs">i</span>
+                            <button type="button" aria-label="Share on Instagram" onclick="shareOnSocial()" class="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors scale-hover">
+                                <span class="text-xs" aria-hidden="true">i</span>
                             </button>
                         </div>
                     </div>
@@ -884,7 +875,7 @@
     </footer>
 
     <!-- Donation Modal -->
-    <div id="donationModal" class="fixed inset-0 bg-black bg-opacity-50 modal hidden z-50 flex items-center justify-center p-4">
+    <div id="donationModal" role="dialog" aria-modal="true" aria-label="Make a donation" class="fixed inset-0 bg-black bg-opacity-50 modal hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-8 transform transition-all scale-hover">
             <div class="text-center mb-6">
                 <h3 class="text-2xl font-bold text-open-arms-navy mb-2">Make a Global Donation</h3>
@@ -917,7 +908,7 @@
     </div>
 
     <!-- Gallery Modal -->
-    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-75 modal hidden z-50 flex items-center justify-center p-4">
+    <div id="galleryModal" role="dialog" aria-modal="true" aria-label="Image viewer" class="fixed inset-0 bg-black bg-opacity-75 modal hidden z-50 flex items-center justify-center p-4">
         <div class="max-w-4xl w-full relative">
             <img id="galleryModalImage" src="" alt="" class="w-full h-auto rounded-lg">
             <div class="absolute top-4 right-4">
@@ -930,6 +921,32 @@
     </div>
 
     <script>
+        /* =========================================================
+           CONFIGURATION — replace the placeholder values below.
+           ---------------------------------------------------------
+           1. Forms (Formspree): create a form at https://formspree.io
+              and paste its endpoint(s). You can reuse one endpoint for
+              all three forms or use a separate one per form.
+           2. Donations (PayPal): set your PayPal account email. To offer
+              recurring/monthly giving, create a Donate button in your
+              PayPal dashboard and paste its hosted button id.
+           ========================================================= */
+        const CONFIG = {
+            formspree: {
+                newsletter: 'https://formspree.io/f/YOUR_FORM_ID',
+                volunteer:  'https://formspree.io/f/YOUR_FORM_ID',
+                contact:    'https://formspree.io/f/YOUR_FORM_ID',
+            },
+            paypal: {
+                businessEmail: 'YOUR_PAYPAL_EMAIL@example.com', // for one-time gifts with a chosen amount
+                monthlyHostedButtonId: '',                      // optional: hosted Donate button id for monthly giving
+                currency: 'USD',
+            },
+        };
+        function isConfigured(value) {
+            return value && !/YOUR_FORM_ID|YOUR_PAYPAL_EMAIL|example\.com/.test(value);
+        }
+
         // Counter animation
         function animateCounters() {
             const counters = document.querySelectorAll('.counter');
@@ -1007,15 +1024,37 @@
         });
 
         function processDonation(type) {
-            const amount = selectedAmount || document.getElementById('customAmount')?.value;
+            const amount = selectedAmount || parseFloat(document.getElementById('customAmount')?.value);
             if (!amount || amount <= 0) {
                 alert('Please select or enter a donation amount.');
                 return;
             }
-            
-            alert(`Thank you! You've chosen to donate $${amount} ${type === 'monthly' ? 'monthly' : 'as a one-time donation'} to help families worldwide. 
-                   
-In a real implementation, this would redirect to a secure payment processor like Stripe or PayPal.`);
+
+            const { businessEmail, monthlyHostedButtonId, currency } = CONFIG.paypal;
+
+            // Monthly giving via a PayPal hosted Donate button (handles recurring on PayPal's side)
+            if (type === 'monthly') {
+                if (monthlyHostedButtonId) {
+                    window.open(`https://www.paypal.com/donate/?hosted_button_id=${encodeURIComponent(monthlyHostedButtonId)}`, '_blank', 'noopener');
+                    closeDonationModal();
+                    return;
+                }
+                // Fall back to a one-time gift but let the donor toggle "make this recurring" on PayPal
+            }
+
+            if (!isConfigured(businessEmail)) {
+                alert('Online donations are being set up. Please email hello@openarmsglobal.org to give today — thank you!');
+                return;
+            }
+
+            const params = new URLSearchParams({
+                business: businessEmail,
+                amount: amount.toFixed(2),
+                currency_code: currency || 'USD',
+                item_name: 'Donation to Open Arms Global',
+                no_recurring: type === 'monthly' ? '0' : '1',
+            });
+            window.open(`https://www.paypal.com/donate/?${params.toString()}`, '_blank', 'noopener');
             closeDonationModal();
         }
 
@@ -1032,29 +1071,66 @@ In a real implementation, this would redirect to a secure payment processor like
             document.body.style.overflow = 'auto';
         }
 
-        // Form Handlers
-        function handleNewsletterSignup(event) {
+        // Form Handlers — submit to Formspree (async, with inline status)
+        function showFormStatus(form, message, ok) {
+            let el = form.querySelector('.form-status');
+            if (!el) {
+                el = document.createElement('p');
+                el.className = 'form-status text-sm mt-3';
+                form.appendChild(el);
+            }
+            el.textContent = message;
+            el.classList.toggle('text-green-600', ok);
+            el.classList.toggle('text-red-600', !ok);
+        }
+
+        async function submitToFormspree(event, endpoint, successMessage) {
             event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            alert(`Thank you for subscribing to Open Arms Global updates! We'll send global program updates to ${email}.`);
-            event.target.reset();
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalLabel = submitBtn ? submitBtn.textContent : '';
+
+            if (!isConfigured(endpoint)) {
+                showFormStatus(form, 'This form isn’t connected yet. Please email hello@openarmsglobal.org.', false);
+                return;
+            }
+
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' },
+                });
+                if (res.ok) {
+                    showFormStatus(form, successMessage, true);
+                    form.reset();
+                } else {
+                    const data = await res.json().catch(() => ({}));
+                    const msg = data.errors ? data.errors.map(e => e.message).join(', ')
+                                            : 'Something went wrong. Please try again.';
+                    showFormStatus(form, msg, false);
+                }
+            } catch (err) {
+                showFormStatus(form, 'Network error. Please check your connection and try again.', false);
+            } finally {
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+            }
+        }
+
+        function handleNewsletterSignup(event) {
+            submitToFormspree(event, CONFIG.formspree.newsletter,
+                'Thank you for subscribing! We’ll keep you posted on our programs.');
         }
 
         function handleVolunteerSignup(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
-            const country = formData.get('country');
-            alert(`Thank you for your interest, ${name} from ${country}! We'll contact you soon about global volunteer opportunities.`);
-            event.target.reset();
+            submitToFormspree(event, CONFIG.formspree.volunteer,
+                'Thank you for volunteering! We’ll be in touch about global opportunities soon.');
         }
 
         function handleContactForm(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
-            alert(`Thank you for reaching out, ${name}! We'll get back to you within 24 hours about helping communities globally.`);
-            event.target.reset();
+            submitToFormspree(event, CONFIG.formspree.contact,
+                'Thank you for reaching out! We’ll get back to you within 24 hours.');
         }
 
         // Social Sharing
@@ -1080,6 +1156,18 @@ In a real implementation, this would redirect to a secure payment processor like
             alert('Family sponsorship program launching soon! For now, please contact us directly at hello@openarmsglobal.org to learn about ongoing support opportunities.');
         }
 
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function setMobileMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenuBtn.setAttribute('aria-expanded', open);
+            mobileMenuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+        mobileMenuBtn.addEventListener('click', () => {
+            setMobileMenu(mobileMenu.classList.contains('hidden'));
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1091,6 +1179,8 @@ In a real implementation, this would redirect to a secure payment processor like
                         block: 'start'
                     });
                 }
+                // Close the mobile menu after navigating
+                setMobileMenu(false);
             });
         });
 
@@ -1120,56 +1210,22 @@ In a real implementation, this would redirect to a secure payment processor like
             }
         });
 
-        // Counter animation function
-        function animateCounter(elementId, targetValue, duration = 2000) {
-            const element = document.getElementById(elementId);
-            const startValue = 0;
-            const increment = targetValue / (duration / 16);
-            let currentValue = startValue;
-            
-            const timer = setInterval(() => {
-                currentValue += increment;
-                if (currentValue >= targetValue) {
-                    currentValue = targetValue;
-                    clearInterval(timer);
+        // Make gallery thumbnails keyboard-accessible (they're clickable <div>s)
+        document.querySelectorAll('[onclick^="openGalleryModal"]').forEach(el => {
+            el.setAttribute('role', 'button');
+            el.setAttribute('tabindex', '0');
+            const img = el.querySelector('img');
+            if (img && img.alt && !el.getAttribute('aria-label')) {
+                el.setAttribute('aria-label', `View image: ${img.alt}`);
+            }
+            el.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    el.click();
                 }
-                element.textContent = Math.floor(currentValue);
-            }, 16);
-        }
-
-        // Intersection Observer for counter animation
-        function initCounterAnimation() {
-            const counters = document.querySelectorAll('[id$="-counter"]');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const elementId = entry.target.id;
-                        switch(elementId) {
-                            case 'families-counter':
-                                animateCounter(elementId, 185);
-                                break;
-                            case 'children-counter':
-                                animateCounter(elementId, 420);
-                                break;
-                            case 'countries-counter':
-                                animateCounter(elementId, 8);
-                                break;
-                            case 'volunteers-counter':
-                                animateCounter(elementId, 45);
-                                break;
-                        }
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            counters.forEach(counter => {
-                observer.observe(counter);
             });
-        }
+        });
 
-        // Initialize counter animation when page loads
-        document.addEventListener('DOMContentLoaded', initCounterAnimation);
     </script>
 </body>
 </html>
